@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -9,6 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { cn } from "@/lib/utils";
 import { ArrowLeft, Users } from "lucide-react";
 import Link from "next/link";
 import Peer from "peerjs";
@@ -95,12 +96,16 @@ export default function JoinPage() {
 
   return (
     <div className="mx-auto flex w-full max-w-3xl flex-col gap-8 px-4 py-8">
-      <Button variant="outline" asChild>
-        <Link href="/" className="flex items-center self-start">
-          <ArrowLeft />
-          Back to Home
-        </Link>
-      </Button>
+      <Link
+        href="/"
+        className={cn(
+          buttonVariants({ variant: "outline" }),
+          "flex items-center self-start",
+        )}
+      >
+        <ArrowLeft />
+        Back to Home
+      </Link>
 
       <Card>
         <CardHeader>
