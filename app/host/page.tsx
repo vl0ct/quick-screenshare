@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -15,6 +15,7 @@ import Peer from "peerjs";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { ShareOptions } from "./_components/share-options";
+import { cn } from "@/lib/utils";
 
 export default function HostPage() {
   const [roomId, setRoomId] = useState("");
@@ -119,12 +120,16 @@ export default function HostPage() {
   return (
     <div className="px-4 py-8">
       <div className="mx-auto flex w-full max-w-3xl flex-col gap-8">
-        <Button variant="outline" asChild>
-          <Link href="/" className="flex items-center self-start">
-            <ArrowLeft />
-            Back to Home
-          </Link>
-        </Button>
+        <Link
+          href="/"
+          className={cn(
+            buttonVariants({ variant: "outline" }),
+            "flex items-center self-start",
+          )}
+        >
+          <ArrowLeft />
+          Back to Home
+        </Link>
 
         <Card>
           <CardHeader>
