@@ -19,17 +19,17 @@ export default function Home() {
       <div className="mx-auto flex h-[90vh] max-w-3xl flex-col justify-center gap-8 px-4 py-8">
         <div className="flex flex-col items-center gap-4 text-center">
           <div className="flex gap-2">
-            <Badge asChild>
-              <a
-                href="https://github.com/VA5UDEV/screen-sharing"
-                target="_blank"
-              >
-                Repo Link <ArrowUpRightIcon data-icon="inline-end" />
-              </a>
-            </Badge>
-            <Badge asChild>
-              <ThemeSwitch iconSize={12} />
-            </Badge>
+            <Badge
+              render={
+                <a
+                  href="https://github.com/VA5UDEV/screen-sharing"
+                  target="_blank"
+                >
+                  Repo Link <ArrowUpRightIcon data-icon="inline-end" />
+                </a>
+              }
+            />
+            <Badge render={<ThemeSwitch iconSize={12} />} />
           </div>
           <h1 className="mx-auto max-w-3xl text-4xl font-bold tracking-tight text-balance sm:text-5xl">
             Share Your Screen Instantly
