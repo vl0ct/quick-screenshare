@@ -23,14 +23,16 @@ export function CustomRoomIdForm() {
       onOpenChange={setIsOpen}
       className="flex flex-col gap-4"
     >
-      <CollapsibleTrigger asChild>
-        <Button variant="ghost" className="text-muted-foreground text-xs">
-          <ChevronRightIcon
-            className={cn("transition-transform", isOpen && "rotate-90")}
-          />
-          Need a custom room ID?
-        </Button>
-      </CollapsibleTrigger>
+      <CollapsibleTrigger
+        render={
+          <Button variant="ghost" className="text-muted-foreground text-xs">
+            <ChevronRightIcon
+              className={cn("transition-transform", isOpen && "rotate-90")}
+            />
+            Need a custom room ID?
+          </Button>
+        }
+      />
       <CollapsibleContent className="flex flex-col gap-4">
         <div className="flex flex-col gap-2">
           <Label htmlFor="custom-id">Custom Room ID</Label>
@@ -45,10 +47,15 @@ export function CustomRoomIdForm() {
             spaces allowed in between.
           </span>
         </div>
-        <Button disabled={!customRoomId} asChild={!!customRoomId}>
-          <Link href={`/host?room=${customRoomId}`}>
-            Create Room with Custom ID
-          </Link>
+        <Button
+          disabled={!customRoomId}
+          render={
+            customRoomId ? (
+              <Link href={`/host?room=${customRoomId}`} />
+            ) : undefined
+          }
+        >
+          Create Room with Custom ID
         </Button>
       </CollapsibleContent>
     </Collapsible>
