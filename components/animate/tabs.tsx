@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { motion, type Transition, type HTMLMotionProps } from 'motion/react';
 
-import { cn } from '@workspace/ui/lib/utils';
+import { cn } from '@/lib/utils';
 import {
   MotionHighlight,
   MotionHighlightItem,
