@@ -1,21 +1,11 @@
-import { Geist, Lora, Fira_Code, Inter } from "next/font/google";
+import { Concert_One, Autour_One } from "next/font/google";
 
-export const inter = Inter({
+export const concertOne = Concert_One({
+  weight: "400",
   subsets: ["latin"],
-  variable: "--font-sans",
 });
 
-export const fontSerif = Lora({
+export const autourOne = Autour_One({
+  weight: "400",
   subsets: ["latin"],
-  variable: "--font-serif",
-});
-
-export const fontMono = Fira_Code({
-  subsets: ["latin"],
-  variable: "--font-mono",
-});
-
-export const geist = Geist({
-  subsets: ["latin"],
-  variable: "--font-geist",
 });
