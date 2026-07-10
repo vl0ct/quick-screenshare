@@ -28,18 +28,23 @@ export function ShareOptions({ roomId }: ShareOptionsProps) {
   return (
     <div className="mt-4 flex flex-col gap-6">
       <div className="flex flex-col gap-2">
-        <p className="text-muted-foreground text-sm">Room Code</p>
-        <code className="bg-muted flex w-full items-center justify-between gap-2 rounded-lg p-3 font-mono text-sm tracking-tight">
-          {roomId || "Generating room code..."}
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={copyRoomId}
-            disabled={!roomId}
-            className="text-muted-foreground size-4"
-          >
-            <CopyIcon />
-          </Button>
+        <p className="text-muted-foreground px-3 text-sm">Room Code</p>
+        <code className="bg-muted relative flex h-12 w-full items-center overflow-hidden rounded-lg font-mono text-sm tracking-tight">
+          <span className="flex-1 truncate px-4">
+            {roomId || "Generating room code..."}
+          </span>
+
+          <div className="text-muted-foreground flex h-full w-12 shrink-0 items-center justify-center">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={copyRoomId}
+              disabled={!roomId}
+              className="cursor-pointer"
+            >
+              <CopyIcon className="size-4" />
+            </Button>
+          </div>
         </code>
       </div>
 
@@ -53,20 +58,25 @@ export function ShareOptions({ roomId }: ShareOptionsProps) {
       </div>
 
       <div className="flex flex-col gap-2">
-        <p className="text-muted-foreground text-sm">Shareable Link</p>
-        <code className="bg-muted flex w-full items-center justify-between gap-2 rounded-lg p-3 font-mono text-sm tracking-tight">
-          {roomId
-            ? `${window.location.origin}/join?room=${roomId}`
-            : "Generating link..."}
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={copyShareableLink}
-            disabled={!roomId}
-            className="text-muted-foreground size-4"
-          >
-            <CopyIcon />
-          </Button>
+        <p className="text-muted-foreground px-3 text-sm">Shareable Link</p>
+        <code className="bg-muted relative flex h-12 w-full items-center overflow-hidden rounded-lg font-mono text-sm tracking-tight">
+          <span className="flex-1 truncate px-4">
+            {roomId
+              ? `${window.location.origin}/join?room=${roomId}`
+              : "Generating link..."}
+          </span>
+
+          <div className="text-muted-foreground flex h-full w-12 shrink-0 items-center justify-center">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={copyShareableLink}
+              disabled={!roomId}
+              className="cursor-pointer"
+            >
+              <CopyIcon className="size-4" />
+            </Button>
+          </div>
         </code>
       </div>
     </div>
