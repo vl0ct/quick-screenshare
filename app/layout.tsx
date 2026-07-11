@@ -27,8 +27,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning className={concertOne.className}>
-      <body className={`flex min-h-screen flex-col antialiased`}>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${concertOne.className} flex min-h-screen flex-col antialiased`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
